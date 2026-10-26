@@ -1,0 +1,348 @@
+.kanban-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #0d1225;
+  color: #e0eaf5;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.page-header {
+  background: #0a0e1c;
+  border-bottom: 1px solid rgba(240, 180, 41, 0.15);
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  gap: 20px;
+}
+
+.header-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 4px;
+}
+
+.page-header h1 {
+  color: #f0b429;
+  font-size: 18px;
+  margin: 0;
+}
+
+.user-info {
+  color: #a0afc4;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.header-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  color: #5ba3e0;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-back:hover {
+  background: rgba(91, 163, 224, 0.15);
+  color: #e0eaf5;
+}
+
+.btn-novo-chamado {
+  background: linear-gradient(135deg, #f0b429, #ffcc66);
+  color: #0d1225;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.btn-novo-chamado:hover {
+  opacity: 0.9;
+}
+
+.btn-logout {
+  background: rgba(244, 67, 54, 0.15);
+  color: #f44336;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-logout:hover {
+  background: rgba(244, 67, 54, 0.25);
+  border-color: #f44336;
+}
+
+.page-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn-equipe {
+  background: rgba(91, 163, 224, 0.15);
+  color: #5ba3e0;
+  border: 1px solid rgba(91, 163, 224, 0.3);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn-equipe:hover {
+  background: rgba(91, 163, 224, 0.25);
+  border-color: #5ba3e0;
+}
+
+/* ── Overlay ── */
+.equipe-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 200;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ── Painel lateral ── */
+.equipe-panel {
+  width: 360px;
+  max-width: 95vw;
+  height: 100%;
+  background: #0f1629;
+  border-left: 1px solid rgba(240, 180, 41, 0.15);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: slide-in 0.25s ease;
+}
+
+@keyframes slide-in {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+.equipe-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid rgba(240, 180, 41, 0.12);
+  flex-shrink: 0;
+}
+
+.equipe-panel-header h2 {
+  color: #f0b429;
+  font-size: 16px;
+  margin: 0;
+}
+
+.btn-fechar-painel {
+  background: none;
+  border: none;
+  color: #a0afc4;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.btn-fechar-painel:hover {
+  color: #e0eaf5;
+}
+
+/* ── Conteúdo do painel ── */
+.equipe-loading,
+.equipe-vazia {
+  padding: 32px 20px;
+  color: #6b7a99;
+  font-size: 14px;
+  text-align: center;
+}
+
+.equipe-panel > div:not(.equipe-panel-header):not(.equipe-loading):not(.equipe-vazia) {
+  overflow-y: auto;
+  flex: 1;
+  padding: 12px 0 20px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(240, 180, 41, 0.2) transparent;
+}
+
+/* ── Grupos ── */
+.equipe-grupo {
+  margin-bottom: 8px;
+}
+
+.equipe-grupo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px 6px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #6b7a99;
+}
+
+.equipe-grupo-count {
+  background: rgba(240, 180, 41, 0.15);
+  color: #f0b429;
+  border-radius: 10px;
+  padding: 0 7px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+/* ── Card do membro ── */
+.suporte-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background 0.15s;
+}
+
+.suporte-card:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.suporte-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.suporte-nome {
+  color: #d0dce8;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.suporte-email {
+  color: #6b7a99;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.suporte-status {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 7px;
+  border-radius: 20px;
+  display: inline-block;
+  width: fit-content;
+  margin-top: 2px;
+}
+
+.status-aprovado {
+  background: rgba(76, 175, 80, 0.15);
+  color: #66bb6a;
+  border: 1px solid rgba(76, 175, 80, 0.25);
+}
+
+.status-pendente {
+  background: rgba(255, 193, 7, 0.12);
+  color: #ffc107;
+  border: 1px solid rgba(255, 193, 7, 0.25);
+}
+
+.status-suspenso {
+  background: rgba(244, 67, 54, 0.12);
+  color: #ef5350;
+  border: 1px solid rgba(244, 67, 54, 0.25);
+}
+
+/* ── Botões de ação ── */
+.suporte-acoes {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex-shrink: 0;
+}
+
+.btn-acao-suporte {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.btn-acao-suporte:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.btn-autorizar {
+  background: rgba(76, 175, 80, 0.2);
+  color: #66bb6a;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.btn-autorizar:hover:not(:disabled) {
+  background: rgba(76, 175, 80, 0.35);
+}
+
+.btn-suspender {
+  background: rgba(244, 67, 54, 0.15);
+  color: #ef5350;
+  border: 1px solid rgba(244, 67, 54, 0.25);
+}
+
+.btn-suspender:hover:not(:disabled) {
+  background: rgba(244, 67, 54, 0.3);
+}
+
+@media (max-width: 768px) {
+  .equipe-panel {
+    width: 100vw;
+  }
+}
+}

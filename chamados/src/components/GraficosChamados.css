@@ -1,0 +1,68 @@
+.graficos-section {
+  padding: 24px 24px 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  flex-shrink: 0;
+}
+
+.graficos-titulo {
+  color: #f0b429;
+  font-size: 16px;
+  margin: 0 0 20px;
+}
+
+.graficos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.grafico-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 20px 16px 12px;
+}
+
+.grafico-card h3 {
+  color: #a0afc4;
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.grafico-vazio {
+  color: #4a6080;
+  font-size: 13px;
+  text-align: center;
+  padding: 40px 0;
+}
+
+/* Tooltip customizado */
+.grafico-tooltip {
+  background: #0f1629;
+  border: 1px solid rgba(240, 180, 41, 0.2);
+  border-radius: 6px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tooltip-label {
+  color: #d0dce8;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.tooltip-valor {
+  color: #f0b429;
+  font-size: 12px;
+}
+
+@media (max-width: 900px) {
+  .graficos-grid {
+    grid-template-columns: 1fr;
+  }
+}

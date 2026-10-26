@@ -1,0 +1,143 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #0d1225;
+  color: #e0eaf5;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.dashboard-header {
+  background: #0a0e1c;
+  border-bottom: 1px solid rgba(240, 180, 41, 0.15);
+  padding: 16px 24px;
+  flex-shrink: 0;
+}
+
+.header-content h1 {
+  color: #f0b429;
+  font-size: 18px;
+  margin-bottom: 4px;
+  letter-spacing: -0.5px;
+}
+
+.header-content p {
+  color: #5a7fa8;
+  font-size: 12px;
+}
+
+.dashboard-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 12px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.tab-button {
+  background: none;
+  border: none;
+  color: #5a7fa8;
+  padding: 8px 16px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.tab-button:hover {
+  color: #e0eaf5;
+}
+
+.tab-button.ativa {
+  color: #f0b429;
+  border-bottom-color: #f0b429;
+}
+
+.tab-links {
+  margin-left: auto;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.tab-links small {
+  color: #3a5a7a;
+  font-size: 10px;
+}
+
+.link-rota {
+  color: #5ba3e0;
+  text-decoration: none;
+  font-size: 11px;
+  padding: 4px 8px;
+  border: 1px solid rgba(91, 163, 224, 0.2);
+  border-radius: 4px;
+  transition: all 0.2s;
+  font-family: 'Courier New', monospace;
+}
+
+.link-rota:hover {
+  background: rgba(91, 163, 224, 0.1);
+  border-color: rgba(91, 163, 224, 0.4);
+}
+
+.dashboard-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  background: #0d1225;
+}
+
+.dashboard-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  background: #0a0e1c;
+  flex-shrink: 0;
+}
+
+.dashboard-footer p {
+  font-size: 10px;
+  color: #1a2a3a;
+}
+
+@media (max-width: 768px) {
+  .dashboard-header {
+    padding: 12px 16px;
+  }
+
+  .header-content h1 {
+    font-size: 16px;
+  }
+
+  .dashboard-tabs {
+    padding: 8px 16px;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .tab-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .tab-links {
+    margin-left: 0;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .dashboard-footer {
+    padding: 6px 16px;
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+}

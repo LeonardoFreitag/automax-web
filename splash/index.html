@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>AutoMax</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d1225;
+      color: #e0eaf5;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .logo-area { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+
+    .brand-name { font-size: 22px; font-weight: 700; color: #f0b429; letter-spacing: 4px; text-transform: uppercase; }
+    .brand-sub  { font-size: 11px; color: #3a5a7a; letter-spacing: 2px; text-transform: uppercase; }
+
+    .tagline { font-size: 13px; color: #3a5a7a; text-align: center; line-height: 1.7; }
+
+    .badges { display: flex; gap: 8px; }
+    .badge {
+      padding: 4px 14px;
+      border: 1px solid rgba(240,180,41,0.2);
+      border-radius: 20px;
+      font-size: 10px; color: #f0b429;
+      letter-spacing: 0.5px; text-transform: uppercase;
+    }
+
+    .loading {
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+    }
+    .bar-track {
+      width: 200px; height: 2px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 2px; overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, #f0b429, #3ec6e0);
+      border-radius: 2px;
+      animation: load 2s ease-in-out forwards;
+    }
+    @keyframes load {
+      0%   { width: 0%; }
+      100% { width: 100%; }
+    }
+    .loading-text { font-size: 11px; color: #2a4060; letter-spacing: 1px; }
+
+    .version { font-size: 10px; color: #1a2a3a; letter-spacing: 1px; position: absolute; bottom: 16px; }
+  </style>
+</head>
+<body>
+
+  <div class="logo-area">
+    <!-- Logo PNG com fundo transparente -->
+    <img src="../assets/images/logo.png" alt="AutoMax" width="80" height="80">
+
+    <div class="brand-name">AutoMax</div>
+    <div class="brand-sub">Gerenciamento Empresarial Integrado</div>
+  </div>
+
+  <p class="tagline">A solução completa para sua empresa.<br>Eficiência, controle e crescimento em um só lugar.</p>
+
+  <div class="badges">
+    <span class="badge">NF-e</span>
+    <span class="badge">PDV</span>
+    <span class="badge">TEF</span>
+    <span class="badge">Multi-empresa</span>
+  </div>
+
+  <div class="loading">
+    <div class="bar-track">
+      <div class="bar-fill"></div>
+    </div>
+    <div class="loading-text">Iniciando o sistema...</div>
+  </div>
+
+  <span class="version">v 23.2.6 — Modo offline</span>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "automax-web",
+  "version": "23.2.6",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "firebase": "^12.12.1",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
+    "react-router-dom": "^6.30.3",
+    "recharts": "^3.8.1",
+    "sharp": "^0.34.5"
+  },
+  "devDependencies": {
+    "@imgly/background-removal": "^1.7.0",
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^5.4.21"
+  }
+}
